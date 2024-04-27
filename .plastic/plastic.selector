@@ -1,0 +1,4 @@
+repository "PWGood Mind@boost45644@cloud"
+  path "/"
+    br "/main"
+    co "/main"
