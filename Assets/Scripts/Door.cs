@@ -8,18 +8,20 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject body;
     [SerializeField] private CameraController cameraController;
 
+    private const string _isOpenKey = "isOpen";
+
     void Update()
     {
         if (cameraController.LastHit == body && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (doorAnimator.GetBool("isOpen") == false)
+            if (doorAnimator.GetBool(_isOpenKey) == false)
             {
-                doorAnimator.SetBool("isOpen", true);
+                doorAnimator.SetBool(_isOpenKey, true);
                 doorOpenSource.Play();
             }
-            else if (doorAnimator.GetBool("isOpen") == true)
+            else if (doorAnimator.GetBool(_isOpenKey) == true)
             {
-                doorAnimator.SetBool("isOpen", false);
+                doorAnimator.SetBool(_isOpenKey, false);
                 doorCloseSource.Play();
             }
         }

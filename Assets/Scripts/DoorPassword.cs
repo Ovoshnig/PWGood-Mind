@@ -10,10 +10,7 @@ public class DoorPassword : MonoBehaviour
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private AudioSource levelCompleteSource;
 
-    void Start()
-    {
-        canvas.enabled = false;
-    }
+    void Start() => canvas.enabled = false;
     
     void Update()
     {
