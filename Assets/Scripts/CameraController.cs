@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        Ray ray = new Ray(this.transform.position, this.transform.forward);
+        Ray ray = new(transform.position, transform.forward);
 #if UNITY_EDITOR
         Debug.DrawRay(transform.position, transform.forward * 100f, Color.yellow);
 #endif
