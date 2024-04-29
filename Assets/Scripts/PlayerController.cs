@@ -18,10 +18,13 @@ public class PlayerController : MonoBehaviour
             transform.position = teleportationCoordinates;
         if (doorAnimator != null)
         { 
-            if (doorAnimator.GetBool("isOpen") && transform.position.y <= 0.3f && SceneManager.GetActiveScene().buildIndex == 1)
-                SceneManager.LoadScene(2);
-            else if (!doorAnimator.GetBool("isOpen") && transform.position.y <= 0.3f && SceneManager.GetActiveScene().buildIndex == 1)
-                transform.position = teleportationCoordinates;
+            if (transform.position.y < 0.99f && SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                if (doorAnimator.GetBool("isOpen"))
+                    SceneManager.LoadScene(2);
+                else
+                    transform.position = teleportationCoordinates;
+            }
         }
     }
 
