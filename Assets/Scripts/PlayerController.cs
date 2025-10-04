@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = Vector3.zero;
+        rigidbody.linearVelocity = Vector3.zero;
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
             velocity *= runSpeed;
         else
             velocity *= walkSpeed;
-        velocity.y = rigidbody.velocity.y;
+        velocity.y = rigidbody.linearVelocity.y;
         Vector3 worldVelocity = transform.TransformVector(velocity);
-        rigidbody.velocity = worldVelocity;
+        rigidbody.linearVelocity = worldVelocity;
     }
 
     private void OnCollisionEnter(Collision collision)
